@@ -25,11 +25,13 @@ public class PingWorld extends World
             // Create a new world with WORLD_WIDTHxWORLD_HEIGHT cells with a cell size of 1x1 pixels.
             addObject(new Ball(), WORLD_WIDTH/2, WORLD_HEIGHT/2);
             addObject(new Paddle(100,20), 60, WORLD_HEIGHT - 50);
+            addObject(new PaddleTwo(100,20), 60, Greenfoot.getRandomNumber(200) + 100);
         }
         else
         {
             Greenfoot.setWorld(new IntroWorld());
         }
     }
+    
 
 }

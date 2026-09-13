@@ -30,33 +30,29 @@ public class Paddle extends Actor
      */
     public void act() 
     {
-        //tryChangeDirection();
-        if(Greenfoot.isKeyDown("right")){
-            setLocation(getX() + dx, getY());
-        } 
-        if(Greenfoot.isKeyDown("left")){
-            setLocation(getX() - dx, getY());
-        }   
+        changeDirection();
+          
     }    
 
     /**
      * Will rotate the paddle 180 degrees if the paddle is at worlds edge.
      */
-    private void tryChangeDirection()
+    private void changeDirection()
     {
         //Check to see if we are touching the outer boundaries of the world:
         // IF we are touching the right boundary OR we are touching the left boundary:
-        if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("righ"))
-        {
-            //Change our 'x' direction to the inverted direction:
-            dx = dx * -1;
+        if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
+            setLocation(getX() + dx, getY());
         }
+        if(Greenfoot.isKeyDown("left")|| Greenfoot.isKeyDown("a")){
+            setLocation(getX() - dx, getY());
+        } 
     }
 
     /**
      * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
      */
-    private void createImage()
+    public void createImage()
     {
         GreenfootImage image = new GreenfootImage(width, height);
         image.setColor(Color.BLACK);

@@ -18,6 +18,7 @@ public class Ball extends Actor
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
+    private boolean goThroughPaddle;
 
     /**
      * Contructs the ball and sets it in motion!
@@ -52,7 +53,9 @@ public class Ball extends Actor
         else
         {
             move(speed);
-            checkBounceOffPaddle();
+            if(goThroughPaddle = false){
+                checkBounceOffPaddle();
+            }
             checkBounceOffWalls();
             checkBounceOffCeiling();
             checkRestart();
@@ -131,6 +134,7 @@ public class Ball extends Actor
         {
             if (! hasBouncedVertically)
             {
+                goThroughPaddle = true;
                 revertVertically();
             }
         }
@@ -183,6 +187,7 @@ public class Ball extends Actor
         hasBouncedHorizontally = false;
         hasBouncedVertically = false;
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
+        goThroughPaddle = false;
     }
 
 }
