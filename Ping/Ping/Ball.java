@@ -53,8 +53,11 @@ public class Ball extends Actor
         else
         {
             move(speed);
-            if(goThroughPaddle = false){
+            if(goThroughPaddle == false){
                 checkBounceOffPaddle();
+            }
+            if(getWorld().getHeight() - 400 <= getY()){
+                goThroughPaddle = false;
             }
             checkBounceOffWalls();
             checkBounceOffCeiling();

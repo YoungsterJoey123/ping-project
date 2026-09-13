@@ -23,10 +23,9 @@ public class PaddleTwo extends Paddle
     }
     public void checkPaddleReachWall(){
         if (getX() + width / 2 >= getWorld().getWidth()){
-        PingWorld world = (PingWorld) getWorld();
-
-        world.removeObject(this);
-        world.addObject(new PaddleTwo(100, 20), 0, Greenfoot.getRandomNumber(200) + 100);
+            PingWorld world = (PingWorld) getWorld();
+            world.removeObject(this);
+            world.addObject(new PaddleTwo(100, 20), 0, Greenfoot.getRandomNumber(200) + 100);
         }
     }
     
