@@ -26,7 +26,7 @@ public class Ball extends Actor
     /**
      * Contructs the ball and sets it in motion!
      */
-    public Ball(int width, int height)
+    public Ball(int width, int height, GameManager gameManager)
     {
         this.width = width;
         this.height = height;
@@ -57,6 +57,7 @@ public class Ball extends Actor
         }
         else
         {
+            increaseSpeed();
             move(speed);
             if(goThroughPaddle == false){
                 checkBounceOffPaddle();
@@ -204,5 +205,13 @@ public class Ball extends Actor
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
         goThroughPaddle = false;
     }
-
+    
+    private void increaseSpeed(){
+        if(gameManager.getPaddleHits() >= 10){
+            speed ++;    
+            gameManager.resetPaddleHits();
+            gameManager.addLevel();
+        }
+        
+    }
 }

@@ -23,5 +23,15 @@ public class GameManager
         return paddleHit;
     }
     
+    public void resetPaddleHits(){
+        paddleHit = 0;
+    }
     
+    public int getGameLevel(){
+        return gameLevel;
+    }
+    
+    public void addLevel(){
+        gameLevel++;
+    }
 }
