@@ -52,7 +52,7 @@ public class Paddle extends Actor
     /**
      * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
      */
-    public void createImage()
+    private void createImage()
     {
         GreenfootImage image = new GreenfootImage(width, height);
         image.setColor(Color.BLACK);

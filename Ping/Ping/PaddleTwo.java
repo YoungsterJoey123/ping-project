@@ -11,6 +11,7 @@ public class PaddleTwo extends Paddle
     public PaddleTwo(int width, int height)
     {
         super(width, height);
+        createImage();
     }
     /**
      * Act - do whatever the Paddle2 wants to do. This method is called whenever
@@ -20,14 +21,21 @@ public class PaddleTwo extends Paddle
     {
         setLocation(getX() + 1, getY());
         checkPaddleReachWall();
+
     }
     public void checkPaddleReachWall(){
-        if (getX() + width / 2 >= getWorld().getWidth()){
+        if (getX() + width /2 >= getWorld().getWidth()){
             PingWorld world = (PingWorld) getWorld();
             world.removeObject(this);
             world.addObject(new PaddleTwo(100, 20), 0, Greenfoot.getRandomNumber(200) + 100);
         }
     }
     
-    
+    private void createImage()
+    {
+        GreenfootImage image = new GreenfootImage(width, height);
+        image.setColor(Color.RED);
+        image.fill();
+        setImage(image);
+    }
 }
