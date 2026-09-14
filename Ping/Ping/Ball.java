@@ -21,6 +21,7 @@ public class Ball extends Actor
     private boolean hasBouncedVertically;
     private int delay;
     private boolean goThroughPaddle;
+    private GameManager gameManager; 
 
     /**
      * Contructs the ball and sets it in motion!
@@ -29,6 +30,7 @@ public class Ball extends Actor
     {
         this.width = width;
         this.height = height;
+        this.gameManager = gameManager;
         createImage();
         init();
     }
@@ -38,7 +40,7 @@ public class Ball extends Actor
      */
     private void createImage()
     {
-        setImage("f1 bold.jpg");
+        setImage("f1_bold.png");
         GreenfootImage image = getImage();
         image.scale(width,height);
     }
@@ -99,12 +101,14 @@ public class Ball extends Actor
         return (getY() >= getWorld().getHeight() - BALL_SIZE/2);
     }
     public void checkBounceOffPaddle(){
-        if (isTouchingPaddle())
+        if (isTouchingPaddle() &&! hasBouncedVertically)
         {
-            if (! hasBouncedVertically)
-            {
-                revertVertically();
-            }
+            
+             revertVertically(); 
+             gameManager.paddleHits();
+             GreenfootSound hit = new GreenfootSound("ding.mp3");
+             hit.play(); 
+            
         }
         else
         {
@@ -122,11 +126,14 @@ public class Ball extends Actor
             if (! hasBouncedHorizontally)
             {
                 revertHorizontally();
+                GreenfootSound hit = new GreenfootSound("ding.mp3");
+                hit.play();
             }
         }
         else
         {
             hasBouncedHorizontally = false;
+
         }
     }
 
@@ -142,6 +149,8 @@ public class Ball extends Actor
             {
                 goThroughPaddle = true;
                 revertVertically();
+                GreenfootSound hit = new GreenfootSound("ding.mp3");
+                hit.play();
             }
         }
         else

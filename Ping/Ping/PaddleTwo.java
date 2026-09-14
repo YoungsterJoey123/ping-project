@@ -33,7 +33,7 @@ public class PaddleTwo extends Paddle
     
     private void createImage()
     {
-        setImage("f1 bil modstander.png");
+        setImage("f1_bil_modstander.png");
         GreenfootImage image = getImage();
         image.scale(width,height);
         setRotation(180);
