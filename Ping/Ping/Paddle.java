@@ -9,10 +9,11 @@ import greenfoot.*;
  */
 public class Paddle extends Actor
 {
-    public int width;
-    public int height;
-    public int dx;
-
+    protected int width;
+    protected int height;
+    protected int dx;
+    protected GameManager gameManager; 
+    
     /**
      * Constructs a new paddle with the given dimensions.
      */
@@ -22,7 +23,10 @@ public class Paddle extends Actor
         this.height = height;
         dx = 2;
         createImage();
+        this.gameManager = gameManager;
     }
+    
+    
 
     /**
      * Act - do whatever the Paddle wants to do. This method is called whenever
@@ -31,7 +35,6 @@ public class Paddle extends Actor
     public void act() 
     {
         changeDirection();
-          
     }    
 
     /**

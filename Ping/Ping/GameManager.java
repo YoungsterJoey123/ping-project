@@ -34,4 +34,8 @@ public class GameManager
     public void addLevel(){
         gameLevel++;
     }
+    
+    public void resetGameLevel(){
+        gameLevel = 0;
+    }
 }

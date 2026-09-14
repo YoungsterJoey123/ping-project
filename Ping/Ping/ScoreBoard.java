@@ -7,7 +7,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ScoreBoard  
+public class ScoreBoard extends Actor
 {
     private GameManager gameManager;
     
@@ -26,7 +26,7 @@ public class ScoreBoard
    
     public void updateScoreBoard(){
         String text =  
-            "Game Level" + gameManager.getGameLevel();
+            "Game Level " + gameManager.getGameLevel();
         GreenfootImage image = new GreenfootImage(text,18,Color.BLACK, new Color(0,0,0,0));
         setImage(image);
     }

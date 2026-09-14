@@ -21,7 +21,6 @@ public class PaddleTwo extends Paddle
     {
         setLocation(getX() + 1, getY());
         checkPaddleReachWall();
-
     }
     public void checkPaddleReachWall(){
         if (getX() + width /2 >= getWorld().getWidth()){

@@ -101,6 +101,7 @@ public class Ball extends Actor
     { 
         return (getY() >= getWorld().getHeight() - BALL_SIZE/2);
     }
+    
     public void checkBounceOffPaddle(){
         if (isTouchingPaddle() &&! hasBouncedVertically)
         {
@@ -204,6 +205,7 @@ public class Ball extends Actor
         hasBouncedVertically = false;
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
         goThroughPaddle = false;
+        gameManager.resetGameLevel();
     }
     
     private void increaseSpeed(){
