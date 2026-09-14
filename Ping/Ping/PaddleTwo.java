@@ -27,15 +27,16 @@ public class PaddleTwo extends Paddle
         if (getX() + width /2 >= getWorld().getWidth()){
             PingWorld world = (PingWorld) getWorld();
             world.removeObject(this);
-            world.addObject(new PaddleTwo(100, 20), 0, Greenfoot.getRandomNumber(200) + 100);
+            world.addObject(new PaddleTwo(width, height), 0, Greenfoot.getRandomNumber(200) + 100);
         }
     }
     
     private void createImage()
     {
-        GreenfootImage image = new GreenfootImage(width, height);
-        image.setColor(Color.RED);
-        image.fill();
-        setImage(image);
+        setImage("f1 bil modstander.png");
+        GreenfootImage image = getImage();
+        image.scale(width,height);
+        setRotation(180);
+
     }
 }

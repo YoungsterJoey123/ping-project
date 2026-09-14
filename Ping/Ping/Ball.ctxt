@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Ball
 comment0.text=\n\ A\ Ball\ is\ a\ thing\ that\ bounces\ of\ walls\ and\ paddles\ (or\ at\ least\ i\ should).\n\ \n\ @author\ The\ teachers\ \n\ @version\ 1\n
-comment1.params=
-comment1.target=Ball()
+comment1.params=width\ height
+comment1.target=Ball(int,\ int)
 comment1.text=\n\ Contructs\ the\ ball\ and\ sets\ it\ in\ motion\!\n
 comment10.params=
 comment10.target=void\ checkBounceOffCeiling()

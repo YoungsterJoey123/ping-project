@@ -1,4 +1,5 @@
 import greenfoot.*;
+import greenfoot.GreenfootImage;
 
 
 /**
@@ -13,7 +14,8 @@ public class Ball extends Actor
     private static final int BOUNCE_DEVIANCE_MAX = 5;
     private static final int STARTING_ANGLE_WIDTH = 90;
     private static final int DELAY_TIME = 100;
-
+    private int width;
+    private int height;
     private int speed;
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
@@ -23,8 +25,10 @@ public class Ball extends Actor
     /**
      * Contructs the ball and sets it in motion!
      */
-    public Ball()
+    public Ball(int width, int height)
     {
+        this.width = width;
+        this.height = height;
         createImage();
         init();
     }
@@ -34,10 +38,9 @@ public class Ball extends Actor
      */
     private void createImage()
     {
-        GreenfootImage ballImage = new GreenfootImage(BALL_SIZE,BALL_SIZE);
-        ballImage.setColor(Color.BLACK);
-        ballImage.fillOval(0, 0, BALL_SIZE, BALL_SIZE);
-        setImage(ballImage);
+        setImage("f1 bold.jpg");
+        GreenfootImage image = getImage();
+        image.scale(width,height);
     }
 
     /**
