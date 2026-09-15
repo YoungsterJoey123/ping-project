@@ -28,6 +28,7 @@ public class PingWorld extends World
             addObject(scoreBoard, 70,50);
             addObject(new Ball(40,40,gameManager), WORLD_WIDTH/2, WORLD_HEIGHT/2);
             addObject(new Paddle(100,60), 60, WORLD_HEIGHT - 50);
+            addObject(new AIPaddle(100,30), 60, 50);
             addObject(new PaddleTwo(100,40), 60, Greenfoot.getRandomNumber(200) + 100);
         }
         else

@@ -62,6 +62,7 @@ public class Ball extends Actor
             checkBounceOffPaddleTwo();
             checkBounceOffWalls();
             checkBounceOffCeiling();
+            checkBounceOffAIPaddle();
             checkRestart();
         }
     }    
@@ -102,6 +103,16 @@ public class Ball extends Actor
     
     public void checkBounceOffPaddle(){
         if (getIntersectingObjects(Paddle.class).size() > 0 && getRotation() < 180)
+        {
+             setRotation(360-getRotation());
+             gameManager.paddleHits();
+             GreenfootSound hit = new GreenfootSound("ding.mp3");//Det tilføjes lyd til Ball, når den hopper af en Paddel.
+             hit.play(); 
+            
+        }
+    }
+    public void checkBounceOffAIPaddle(){
+        if (getIntersectingObjects(AIPaddle.class).size() > 0 && getRotation() > 180)
         {
              setRotation(360-getRotation());
              gameManager.paddleHits();

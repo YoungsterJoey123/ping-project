@@ -5,6 +5,7 @@ comment1.params=width\ height\ gameManager
 comment1.target=Ball(int,\ int,\ GameManager)
 comment1.text=\n\ Contructs\ the\ ball\ and\ sets\ it\ in\ motion\!\n
 comment10.params=
+<<<<<<< Updated upstream
 comment10.target=void\ checkBounceOffCeiling()
 comment10.text=\n\ F\u00F8rst\ tjekkes\ der\ om\ Ball\ rammer\ toppen\ af\ spillet.\n\ Hvis,\ bolden\ ikke\ har\ skiftet\ verticalitet,\ skiftes\ dette\ og\ \u00E6ndre\ goTroughPaddel\ til\ true(Dette\ s\u00E6ttes\ automatisk\ tilbage\ til\ false,\ n\u00E5r\ Ball\n\ kommer\ over\ 300\ p\u00E5\ x-aksen.\ Dette\ defineres\ p\u00E5\ linje\ 65\ &\ 66)\n
 comment11.params=
@@ -16,8 +17,24 @@ comment12.text=\n\ Bounces\ the\ ball\ back\ from\ a\ vertical\ surface.\n
 comment13.params=
 comment13.target=void\ init()
 comment13.text=\n\ Initialize\ the\ ball\ settings.\n
+=======
+comment10.target=void\ checkBounceOffWalls()
+comment10.text=\r\n\ Check\ to\ see\ if\ the\ ball\ should\ bounce\ off\ one\ of\ the\ walls.\r\n\ If\ touching\ one\ of\ the\ walls,\ the\ ball\ is\ bouncing\ off.\r\n
+comment11.params=
+comment11.target=void\ checkBounceOffCeiling()
+comment11.text=\r\n\ F\u00F8rst\ tjekkes\ der\ om\ Ball\ rammer\ toppen\ af\ spillet.\r\n\ Hvis,\ bolden\ ikke\ har\ skiftet\ verticalitet,\ skiftes\ dette\ og\ \u00E6ndre\ goTroughPaddel\ til\ true(Dette\ s\u00E6ttes\ automatisk\ tilbage\ til\ false,\ n\u00E5r\ Ball\r\n\ kommer\ over\ 300\ p\u00E5\ x-aksen.\ Dette\ defineres\ p\u00E5\ linje\ 65\ &\ 66)\r\n
+comment12.params=
+comment12.target=void\ checkRestart()
+comment12.text=\r\n\ Check\ to\ see\ if\ the\ ball\ should\ be\ restarted.\r\n\ If\ touching\ the\ floor\ the\ ball\ is\ restarted\ in\ initial\ position\ and\ speed.\r\n
+comment13.params=
+comment13.target=void\ revertHorizontally()
+comment13.text=\r\n\ Bounces\ the\ ball\ back\ from\ a\ vertical\ surface.\r\n
+>>>>>>> Stashed changes
 comment14.params=
-comment14.target=void\ increaseSpeed()
+comment14.target=void\ init()
+comment14.text=\r\n\ Initialize\ the\ ball\ settings.\r\n
+comment15.params=
+comment15.target=void\ increaseSpeed()
 comment2.params=
 comment2.target=void\ createImage()
 comment2.text=\n\ Creates\ and\ sets\ an\ image\ of\ a\ black\ ball\ to\ this\ actor.\n
@@ -38,6 +55,11 @@ comment7.target=void\ checkBounceOffPaddleTwo()
 comment8.params=
 comment8.target=void\ checkBounceOffPaddle()
 comment9.params=
+<<<<<<< Updated upstream
 comment9.target=void\ checkBounceOffWalls()
 comment9.text=\n\ Check\ to\ see\ if\ the\ ball\ should\ bounce\ off\ one\ of\ the\ walls.\n\ If\ touching\ one\ of\ the\ walls,\ the\ ball\ is\ bouncing\ off.\n
 numComments=15
+=======
+comment9.target=void\ checkBounceOffAIPaddle()
+numComments=16
+>>>>>>> Stashed changes

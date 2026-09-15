@@ -21,7 +21,7 @@ public class Paddle extends Actor
     {
         this.width = width;
         this.height = height;
-        dx = 2;
+        dx = 3;
         createImage();
         this.gameManager = gameManager;
     }
