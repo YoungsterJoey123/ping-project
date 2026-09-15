@@ -6,11 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PaddleTwo extends Paddle
+
+
+public class PaddleTwo extends Actor
 {
+    private int width;
+    private int height;
+    
     public PaddleTwo(int width, int height)
     {
-        super(width, height);
+        this.width = width;
+        this.height = height;
         createImage();
     }
     /**
