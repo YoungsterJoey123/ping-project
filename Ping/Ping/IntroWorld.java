@@ -19,7 +19,6 @@ public class IntroWorld extends World
     {
         super(WORLD_WIDTH, WORLD_HEIGHT, 1); 
         GreenfootImage background = new GreenfootImage("tpose.jpeg");
-        background.setFont(new Font(Arial, Font.BOLD, 30));
         background.scale (WORLD_WIDTH,WORLD_HEIGHT);
         setBackground(background);
         background.setColor(Color.WHITE);

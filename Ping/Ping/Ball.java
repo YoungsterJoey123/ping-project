@@ -20,7 +20,6 @@ public class Ball extends Actor
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
-    private boolean goThroughPaddle;
     private GameManager gameManager; 
 
     /**
@@ -59,25 +58,13 @@ public class Ball extends Actor
         {
             increaseSpeed();
             move(speed);
-            if(goThroughPaddle == false){
-                checkBounceOffPaddle();
-            }
-            if(getWorld().getHeight() - 300 <= getY()){
-                goThroughPaddle = false;
-            }
+            checkBounceOffPaddle();
+            checkBounceOffPaddleTwo();
             checkBounceOffWalls();
             checkBounceOffCeiling();
             checkRestart();
         }
     }    
-    public boolean isTouchingPaddle(){
-        if(isTouching(Paddle.class)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
     /**
      * Returns true if the ball is touching one of the side walls.
      */
@@ -102,20 +89,25 @@ public class Ball extends Actor
         return (getY() >= getWorld().getHeight() - BALL_SIZE/2);
     }
     
-    
-    public void checkBounceOffPaddle(){
-        if (isTouchingPaddle() &&! hasBouncedVertically)
+    public void checkBounceOffPaddleTwo(){
+        if (getIntersectingObjects(PaddleTwo.class).size() > 0 && getRotation() > 180)
         {
-            
-             revertVertically(); 
+             setRotation(360-getRotation());
              gameManager.paddleHits();
              GreenfootSound hit = new GreenfootSound("ding.mp3");//Det tilføjes lyd til Ball, når den hopper af en Paddel.
              hit.play(); 
             
         }
-        else
+    }
+    
+    public void checkBounceOffPaddle(){
+        if (getIntersectingObjects(Paddle.class).size() > 0 && getRotation() < 180)
         {
-            hasBouncedVertically = false;
+             setRotation(360-getRotation());
+             gameManager.paddleHits();
+             GreenfootSound hit = new GreenfootSound("ding.mp3");//Det tilføjes lyd til Ball, når den hopper af en Paddel.
+             hit.play(); 
+            
         }
     }
     /**
@@ -149,17 +141,9 @@ public class Ball extends Actor
     {
         if (isTouchingCeiling())
         {
-            if (! hasBouncedVertically)
-            {
-                revertVertically();
-                goThroughPaddle = true;
+                setRotation(360-getRotation());
                 GreenfootSound hit = new GreenfootSound("ding.mp3"); //Det tilføjes lyd til Ball, når den hopper rammer taget.
                 hit.play();
-            }
-        }
-        else
-        {
-            hasBouncedVertically = false;
         }
     }
 
@@ -187,16 +171,6 @@ public class Ball extends Actor
     }
 
     /**
-     * Bounces the bal back from a horizontal surface.
-     */
-    private void revertVertically()
-    {
-        int randomness = Greenfoot.getRandomNumber(BOUNCE_DEVIANCE_MAX)- BOUNCE_DEVIANCE_MAX / 2;
-        setRotation((360 - getRotation()+ randomness + 360) % 360);
-        hasBouncedVertically = true;
-    }
-
-    /**
      * Initialize the ball settings.
      */
     private void init()
@@ -206,7 +180,6 @@ public class Ball extends Actor
         hasBouncedHorizontally = false;
         hasBouncedVertically = false;
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
-        goThroughPaddle = false;
         gameManager.resetGameLevel();
     }
     
