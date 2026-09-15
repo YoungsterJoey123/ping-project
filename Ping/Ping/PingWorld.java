@@ -36,5 +36,14 @@ public class PingWorld extends World
         }
     }
     
-
+    public void act(){
+        checkWin();
+        
+    }
+    
+    public void checkWin(){
+        if(gameManager.getGameLevel() >= 1){
+            Greenfoot.setWorld(new GameWon());
+        }
+    }
 }

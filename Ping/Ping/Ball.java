@@ -156,7 +156,14 @@ public class Ball extends Actor
         if (isTouchingFloor())
         {
             init();
-            setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+            //setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+        
+   
+            Greenfoot.setWorld(new GameLost());
+        
+        
+        
+           
         }
     }
 

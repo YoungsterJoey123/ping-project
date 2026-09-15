@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=PaddleTwo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Paddle2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Paddle2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=width\ height
 comment1.target=PaddleTwo(int,\ int)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Paddle2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Paddle2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
 comment3.target=void\ checkPaddleReachWall()
-comment3.text=\r\n\ Der\ tages\ Paddlen\ x-koordinaten\ og\ tilf\u00F8jer\ det\ med\ widthen\ af\ Paddlen.\r\n\ Dette\ divideres\ med\ 2,\ s\u00E5\ man\ finder\ spidsen\ af\ bilen.\r\n\ \r\n\ Vi\ definere\ PingWorld\ som\ world,\ hvor\ efter\ vi\ kun\ vil\ have\ PingWorld,\r\n\ dette\ g\u00F8res\ ved\ at\ typecast\ PingWorld\ fra\ World,\ da\ PingWorld\ er\ en\ Subclass\ af\ World,\r\n\ da\ vi\ har\ brug\ for\ at\ det\ er\ PingWorld\ der\ fjerner\ objektet.\r\n\ \r\n\ Vi\ fjerner\ her\ efter\ "this"\ hvilket\ referere\ tilbage\ til\ den\ Class\ vi\ arbejer\ i.\r\n\ Der\ tilf\u00F8jes\ nu\ en\ ny\ PaddelTwo,\ hvor\ vi\ benytter\ os\ af\ Greenfoot\ til\ at\ fine\ et\ tilf\u00E6ldigt\ tal,\ melle\ 0\ og\ 299.\r\n
+comment3.text=\n\ Der\ tages\ Paddlen\ x-koordinaten\ og\ tilf\u00F8jer\ det\ med\ widthen\ af\ Paddlen.\n\ Dette\ divideres\ med\ 2,\ s\u00E5\ man\ finder\ spidsen\ af\ bilen.\n\ \n\ Vi\ definere\ PingWorld\ som\ world,\ hvor\ efter\ vi\ kun\ vil\ have\ PingWorld,\n\ dette\ g\u00F8res\ ved\ at\ typecast\ PingWorld\ fra\ World,\ da\ PingWorld\ er\ en\ Subclass\ af\ World,\n\ da\ vi\ har\ brug\ for\ at\ det\ er\ PingWorld\ der\ fjerner\ objektet.\n\ \n\ Vi\ fjerner\ her\ efter\ "this"\ hvilket\ referere\ tilbage\ til\ den\ Class\ vi\ arbejer\ i.\n\ Der\ tilf\u00F8jes\ nu\ en\ ny\ PaddelTwo,\ hvor\ vi\ benytter\ os\ af\ Greenfoot\ til\ at\ fine\ et\ tilf\u00E6ldigt\ tal,\ melle\ 0\ og\ 299.\n
 comment4.params=
 comment4.target=void\ createImage()
 numComments=5
