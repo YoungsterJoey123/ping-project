@@ -59,25 +59,14 @@ public class Ball extends Actor
         {
             increaseSpeed();
             move(speed);
-            if(goThroughPaddle == false){
-                checkBounceOffPaddle();
-            }
-            if(getWorld().getHeight() - 400 <= getY()){
-                goThroughPaddle = false;
-            }
+            checkBounceOffPaddle();
+            checkBounceOffPaddleTwo();
+            
             checkBounceOffWalls();
             checkBounceOffCeiling();
             checkRestart();
         }
     }    
-    public boolean isTouchingPaddle(){
-        if(isTouching(Paddle.class)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
     /**
      * Returns true if the ball is touching one of the side walls.
      */
@@ -102,19 +91,23 @@ public class Ball extends Actor
         return (getY() >= getWorld().getHeight() - BALL_SIZE/2);
     }
     
-    public void checkBounceOffPaddle(){
-        if (isTouchingPaddle() &&! hasBouncedVertically)
+    public void checkBounceOffPaddleTwo(){
+        if (getIntersectingObjects(PaddleTwo.class).size() > 0 && getRotation() > 180 )
         {
-            
-             revertVertically(); 
+             setRotation(360-getRotation());   
              gameManager.paddleHits();
              GreenfootSound hit = new GreenfootSound("ding.mp3");
              hit.play(); 
-            
         }
-        else
+    }
+    
+    public void checkBounceOffPaddle(){
+        if (getIntersectingObjects(Paddle.class).size() > 0 && getRotation() < 180 )
         {
-            hasBouncedVertically = false;
+             setRotation(360-getRotation());   
+             gameManager.paddleHits();
+             GreenfootSound hit = new GreenfootSound("ding.mp3");
+             hit.play(); 
         }
     }
     /**
@@ -150,7 +143,7 @@ public class Ball extends Actor
             if (! hasBouncedVertically)
             {
                 goThroughPaddle = true;
-                revertVertically();
+                setRotation(360-getRotation());
                 GreenfootSound hit = new GreenfootSound("ding.mp3");
                 hit.play();
             }
@@ -182,16 +175,6 @@ public class Ball extends Actor
         int randomness = Greenfoot.getRandomNumber(BOUNCE_DEVIANCE_MAX)- BOUNCE_DEVIANCE_MAX / 2;
         setRotation((180 - getRotation()+ randomness + 360) % 360);
         hasBouncedHorizontally = true;
-    }
-
-    /**
-     * Bounces the bal back from a horizontal surface.
-     */
-    private void revertVertically()
-    {
-        int randomness = Greenfoot.getRandomNumber(BOUNCE_DEVIANCE_MAX)- BOUNCE_DEVIANCE_MAX / 2;
-        setRotation((360 - getRotation()+ randomness + 360) % 360);
-        hasBouncedVertically = true;
     }
 
     /**
