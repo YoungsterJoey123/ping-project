@@ -24,12 +24,11 @@ public class PingWorld extends World
         if (gameStarted)
         {
             setBackground("f1 bane.jpg");
-            GreenfootImage background = getBackground();
             // Create a new world with WORLD_WIDTHxWORLD_HEIGHT cells with a cell size of 1x1 pixels.
+            addObject(scoreBoard, 70,50);
             addObject(new Ball(40,40,gameManager), WORLD_WIDTH/2, WORLD_HEIGHT/2);
             addObject(new Paddle(100,60), 60, WORLD_HEIGHT - 50);
             addObject(new PaddleTwo(100,40), 60, Greenfoot.getRandomNumber(200) + 100);
-            addObject(scoreBoard, 50,50);
         }
         else
         {

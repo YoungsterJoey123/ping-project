@@ -42,8 +42,12 @@ public class Paddle extends Actor
      */
     private void changeDirection()
     {
-        //Check to see if we are touching the outer boundaries of the world:
-        // IF we are touching the right boundary OR we are touching the left boundary:
+        /**
+         * Opgave 1. Player Paddel styres med enten "a" eller "d" og "left" 
+         * eller "right"
+         * Når vi trykker enten "d" eller "right" tilføjer vi dx(2) på 
+         * x-koordinaten. Det modsatte gøres når vi trykker på "a" eller "left"
+         */
         if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
             setLocation(getX() + dx, getY());
         }
@@ -53,8 +57,12 @@ public class Paddle extends Actor
     }
 
     /**
-     * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
-     */
+     * Vi sætter Paddel til et nyt billede.
+     * Efter dette definere vi nu image på linje 67 ,således at vi på linje 68 kan bruge Greenfoot kommandoen scale til at give Paddlen den rigtige
+     * width og height.
+     * Dette gøres også for, PaddelTwo, Ball og PingWorld.
+    */
+    
     private void createImage()
     {
         setImage("f1_bil_rd.png");

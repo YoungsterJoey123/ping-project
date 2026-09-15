@@ -62,7 +62,7 @@ public class Ball extends Actor
             if(goThroughPaddle == false){
                 checkBounceOffPaddle();
             }
-            if(getWorld().getHeight() - 400 <= getY()){
+            if(getWorld().getHeight() - 300 <= getY()){
                 goThroughPaddle = false;
             }
             checkBounceOffWalls();
@@ -102,13 +102,14 @@ public class Ball extends Actor
         return (getY() >= getWorld().getHeight() - BALL_SIZE/2);
     }
     
+    
     public void checkBounceOffPaddle(){
         if (isTouchingPaddle() &&! hasBouncedVertically)
         {
             
              revertVertically(); 
              gameManager.paddleHits();
-             GreenfootSound hit = new GreenfootSound("ding.mp3");
+             GreenfootSound hit = new GreenfootSound("ding.mp3");//Det tilføjes lyd til Ball, når den hopper af en Paddel.
              hit.play(); 
             
         }
@@ -128,7 +129,7 @@ public class Ball extends Actor
             if (! hasBouncedHorizontally)
             {
                 revertHorizontally();
-                GreenfootSound hit = new GreenfootSound("ding.mp3");
+                GreenfootSound hit = new GreenfootSound("ding.mp3");//Det tilføjes lyd til Ball, når den hopper af sidderne.
                 hit.play();
             }
         }
@@ -140,8 +141,9 @@ public class Ball extends Actor
     }
 
     /**
-     * Check to see if the ball should bounce off the ceiling.
-     * If touching the ceiling the ball is bouncing off.
+     * Først tjekkes der om Ball rammer toppen af spillet.
+     * Hvis, bolden ikke har skiftet verticalitet, skiftes dette og ændre goTroughPaddel til true(Dette sættes automatisk tilbage til false, når Ball
+     * kommer over 300 på x-aksen. Dette defineres på linje 65 & 66)
      */
     private void checkBounceOffCeiling()
     {
@@ -149,9 +151,9 @@ public class Ball extends Actor
         {
             if (! hasBouncedVertically)
             {
-                goThroughPaddle = true;
                 revertVertically();
-                GreenfootSound hit = new GreenfootSound("ding.mp3");
+                goThroughPaddle = true;
+                GreenfootSound hit = new GreenfootSound("ding.mp3"); //Det tilføjes lyd til Ball, når den hopper rammer taget.
                 hit.play();
             }
         }

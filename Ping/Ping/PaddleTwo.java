@@ -22,6 +22,17 @@ public class PaddleTwo extends Paddle
         setLocation(getX() + 1, getY());
         checkPaddleReachWall();
     }
+    /**
+     * Der tages Paddlen x-koordinaten og tilføjer det med widthen af Paddlen.
+     * Dette divideres med 2, så man finder spidsen af bilen.
+     * 
+     * Vi definere PingWorld som world, hvor efter vi kun vil have PingWorld,
+     * dette gøres ved at typecast PingWorld fra World, da PingWorld er en Subclass af World,
+     * da vi har brug for at det er PingWorld der fjerner objektet.
+     * 
+     * Vi fjerner her efter "this" hvilket referere tilbage til den Class vi arbejer i.
+     * Der tilføjes nu en ny PaddelTwo, hvor vi benytter os af Greenfoot til at fine et tilfældigt tal, melle 0 og 299.
+     */
     public void checkPaddleReachWall(){
         if (getX() + width /2 >= getWorld().getWidth()){
             PingWorld world = (PingWorld) getWorld();
