@@ -32,7 +32,7 @@ public class GameLost extends World
         String key = Greenfoot.getKey();
         if (key != null && key.equals("enter"))
         {
-            Greenfoot.setWorld(new PingWorld(true));
+            Greenfoot.setWorld(new IntroWorld());
         }
     }
 }

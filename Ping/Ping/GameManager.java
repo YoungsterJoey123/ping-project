@@ -8,6 +8,9 @@ public class GameManager
 {
     private int paddleHit;
     private int gameLevel;
+    private int playerScore;
+    private int aiScore;
+
     /**
      * Constructor for objects of class GameManager
      */
@@ -38,4 +41,22 @@ public class GameManager
     public void resetGameLevel(){
         gameLevel = 0;
     }
+    
+    public int getPlayerScore(){
+        return playerScore;
+    }
+    
+    public int getAIScore(){
+        return aiScore;
+    }
+    
+    public void addPlayerScore(){
+        playerScore++;
+    }
+    
+    public void addAIScore(){
+        aiScore++;
+    }
 }
+    
+    

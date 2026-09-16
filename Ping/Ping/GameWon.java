@@ -23,7 +23,7 @@ public class GameWon extends World
         setBackground(background);
         background.setColor( Color.WHITE );
         Greenfoot.playSound("Win.mp3");
-        background.drawString("You are the GOAT", WORLD_WIDTH / 2 - 80, WORLD_HEIGHT / 2);
+        background.drawString("You are the GOAT. \n Press <Enter> to race again", WORLD_WIDTH / 2 - 80, WORLD_HEIGHT / 2);
         
     }
     
@@ -32,7 +32,7 @@ public class GameWon extends World
         String key = Greenfoot.getKey();
         if (key != null && key.equals("enter"))
         {
-            Greenfoot.setWorld(new PingWorld(true));
+            Greenfoot.setWorld(new IntroWorld());
         }
     }
 }

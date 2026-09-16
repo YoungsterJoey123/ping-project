@@ -12,7 +12,7 @@ public class Ball extends Actor
 {
     private static final int BALL_SIZE = 25;
     private static final int BOUNCE_DEVIANCE_MAX = 5;
-    private static final int STARTING_ANGLE_WIDTH = 90;
+    private static final int STARTING_ANGLE_WIDTH = 60;
     private static final int DELAY_TIME = 100;
     private int width;
     private int height;
@@ -152,9 +152,15 @@ public class Ball extends Actor
     {
         if (isTouchingCeiling())
         {
-                setRotation(360-getRotation());
-                GreenfootSound hit = new GreenfootSound("ding.mp3"); //Det tilføjes lyd til Ball, når den hopper rammer taget.
-                hit.play();
+                if (getWorld() instanceof PingWorld){
+                    setRotation(360-getRotation());
+                    GreenfootSound hit = new GreenfootSound("ding.mp3"); //Det tilføjes lyd til Ball, når den hopper rammer taget.
+                    hit.play();
+                }
+                else if (getWorld() instanceof AiWorld){
+                    gameManager.addPlayerScore();
+                    resetBall();
+                }
         }
     }
 
@@ -166,15 +172,14 @@ public class Ball extends Actor
     {
         if (isTouchingFloor())
         {
-            init();
-            //setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-        
-   
-            Greenfoot.setWorld(new GameLost());
-        
-        
-        
-           
+                if (getWorld() instanceof PingWorld){
+                    init();
+                    Greenfoot.setWorld(new GameLost());
+                }
+                else if (getWorld() instanceof AiWorld){
+                    gameManager.addAIScore();
+                    resetBall();
+                }
         }
     }
 
@@ -196,7 +201,6 @@ public class Ball extends Actor
         speed = 2;
         delay = DELAY_TIME;
         hasBouncedHorizontally = false;
-        hasBouncedVertically = false;
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
         gameManager.resetGameLevel();
     }
@@ -209,4 +213,10 @@ public class Ball extends Actor
         }
         
     }
+    
+    public void resetBall()
+    {
+        setLocation(250, 350);
+        setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
+    }   
 }

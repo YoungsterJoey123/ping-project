@@ -1,9 +1,13 @@
 #BlueJ class context
 comment0.target=GameManager
-comment0.text=\n\ Write\ a\ description\ of\ class\ GameManager\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameManager\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=GameManager()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameManager\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameManager\r\n
+comment10.params=
+comment10.target=void\ addPlayerScore()
+comment11.params=
+comment11.target=void\ addAIScore()
 comment2.params=
 comment2.target=void\ paddleHits()
 comment3.params=
@@ -16,4 +20,8 @@ comment6.params=
 comment6.target=void\ addLevel()
 comment7.params=
 comment7.target=void\ resetGameLevel()
-numComments=8
+comment8.params=
+comment8.target=int\ getPlayerScore()
+comment9.params=
+comment9.target=int\ getAIScore()
+numComments=12
