@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AIPaddle extends Actor
 {
-    protected int width;
-    protected int height;
+    private int width;
+    private int height;
     public AIPaddle(int width, int height)
     {
         this.width = width;

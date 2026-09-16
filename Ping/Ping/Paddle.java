@@ -9,10 +9,10 @@ import greenfoot.*;
  */
 public class Paddle extends Actor
 {
-    protected int width;
-    protected int height;
-    protected int dx;
-    protected GameManager gameManager; 
+    private int width;
+    private int height;
+    private int dx;
+    private GameManager gameManager; 
     
     /**
      * Constructs a new paddle with the given dimensions.
