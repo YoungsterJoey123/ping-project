@@ -41,6 +41,9 @@ public class PingWorld extends World
         
     }
     
+    /*
+     * checker om spilleren har vundet
+     */
     public void checkWin(){
         if(gameManager.getGameLevel() >= 5){
             Greenfoot.setWorld(new GameWon());

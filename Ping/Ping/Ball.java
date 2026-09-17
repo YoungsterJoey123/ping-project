@@ -90,6 +90,11 @@ public class Ball extends Actor
         return (getY() >= getWorld().getHeight() - BALL_SIZE/2);
     }
     
+    /*
+     * checker om den har bounce off paddle two der ser om den er i paddlen og
+     * at rotation er størrer end 180 så ændre dens rotation med 360 - rotation på ball lige nu
+     * så hvis rotation på ball er 200 så bliver rotation til 160
+     */
     public void checkBounceOffPaddleTwo(){
         if (getIntersectingObjects(PaddleTwo.class).size() > 0 && getRotation() > 180)
         {
@@ -101,6 +106,9 @@ public class Ball extends Actor
         }
     }
     
+    /*
+     *  det samme som den oven over men at rotation er mindre end 180
+     */
     public void checkBounceOffPaddle(){
         if (getIntersectingObjects(Paddle.class).size() > 0 && getRotation() < 180)
         {
@@ -111,6 +119,10 @@ public class Ball extends Actor
             
         }
     }
+    
+    /*
+     *  det samme som check bounce off paddle two
+     */
     public void checkBounceOffAIPaddle(){
         if (getIntersectingObjects(AIPaddle.class).size() > 0 && getRotation() > 180)
         {
@@ -205,6 +217,10 @@ public class Ball extends Actor
         gameManager.resetGameLevel();
     }
     
+    /*
+     * increaser speed hvis paddlehits er størrer eller det samme som 10 også giver en speed og reseter paddlehits
+     * og tilføjer et level til game level
+     */
     private void increaseSpeed(){
         if(gameManager.getPaddleHits() >= 10){
             speed ++;    
@@ -214,6 +230,9 @@ public class Ball extends Actor
         
     }
     
+    /*
+     * reseter ball til den start postion
+     */
     public void resetBall()
     {
         setLocation(250, 350);

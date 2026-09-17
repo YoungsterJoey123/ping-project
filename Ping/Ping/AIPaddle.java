@@ -17,8 +17,8 @@ public class AIPaddle extends Actor
         createImage();
     }
     /**
-     * Act - do whatever the AIPaddle wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * der bliver lavet en liste af all ball og efter det så for den x og y 
+     * verdien og føgler efter ball
      */
     public void act(){
         Ball ball = (Ball)getWorld().getObjects(Ball.class).get(0);
@@ -30,7 +30,11 @@ public class AIPaddle extends Actor
             setLocation(getX() + 1, getY());
         }
     }
-private void createImage()
+    
+    /*
+     * laver et billede
+     */
+    private void createImage()
     {
         setImage("f1_bil_bla.png");
         GreenfootImage image = getImage();

@@ -8,4 +8,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ updateScoreBoard()
+comment3.text=\r\n\ her\ bliver\ string\ text\ til\ ais\ score\ og\ player\ score\ ved\ at\ f\u00E5\ fat\ i\ score\ fra\ gameManager\ og\ giver\ dem\ farven\ sort\r\n
 numComments=4

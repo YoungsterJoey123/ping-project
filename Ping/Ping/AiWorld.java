@@ -41,12 +41,18 @@ public class AiWorld extends World
         checkLose();
     }
     
+    /*
+     * checker om spilleren har vundet over ai
+     */
     public void checkWin(){
         if(gameManager.getPlayerScore() >= 5){
             Greenfoot.setWorld(new GameWon());
         }
     }
     
+    /*
+     * checker om AIen har vundet over spilleren
+     */
     public void checkLose(){
         if(gameManager.getAIScore() >= 5){
             Greenfoot.setWorld(new GameLost());

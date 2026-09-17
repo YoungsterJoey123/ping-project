@@ -21,7 +21,10 @@ public class ScoreBoard extends Actor
     public void act(){
         updateScoreBoard();
     }
-   
+    
+    /*
+     * her bliver string text til ais score og player score ved at få fat i score fra gameManager og giver dem farven sort
+     */
     public void updateScoreBoard(){
         String text = 
         "AI:" + gameManager.getAIScore() +  "\nPlayer: " + gameManager.getPlayerScore();
