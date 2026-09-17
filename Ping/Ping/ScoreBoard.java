@@ -26,10 +26,17 @@ public class ScoreBoard extends Actor
      * her bliver string text til ais score og player score ved at få fat i score fra gameManager og giver dem farven sort
      */
     public void updateScoreBoard(){
-        String text = 
-        "AI:" + gameManager.getAIScore() +  "\nPlayer: " + gameManager.getPlayerScore();
-        GreenfootImage image = new GreenfootImage(text,18,Color.BLACK,new Color(0,0,0,0));
-        setImage(image);
+        if (getWorld() instanceof PingWorld){
+                    String text = "Game Level:" + gameManager.getGameLevel();
+                    GreenfootImage image = new GreenfootImage(text,18,Color.BLACK,new Color(0,0,0,0));
+                    setImage(image);
+                }
+                else if (getWorld() instanceof AiWorld){
+                    String text = 
+                    "AI:" + gameManager.getAIScore() +  "\nPlayer: " + gameManager.getPlayerScore();
+                    GreenfootImage image = new GreenfootImage(text,18,Color.BLACK,new Color(0,0,0,0));
+                    setImage(image);
+                }
     }
     
 }
